@@ -21,7 +21,7 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  throw new Error('hello from inside2');
+  throw new Error('===START=== ' + JSON.stringify(Object.getOwnPropertyNames(globalThis)) + ' ===END===');
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
