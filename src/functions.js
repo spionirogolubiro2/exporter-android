@@ -7,7 +7,7 @@
  */
 
 function indentMultilineText(text, indentationString) {
-  return null;
+  throw new Error('hello from inside1');
   return text
     .trim()
     .split("\n")
@@ -21,7 +21,7 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  return null;
+  throw new Error('hello from inside2');
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
@@ -37,7 +37,7 @@ function createFullTokenGroupPath(tokenGroup) {
  * @returns {Array<any>}
  */
 function arrayConcat(lhs, rhs) {
-  return null;
+  throw new Error('hello from inside3');
   return lhs.concat(rhs);
 }
 
@@ -47,12 +47,12 @@ function arrayConcat(lhs, rhs) {
  * @param {string} separator
  */
 function arrayJoin(array, separator) {
-  return null;
+  throw new Error('hello from inside4');
   return array.join(separator);
 }
 
 function groupFontsByFamily(fonts) {
-  return null;
+  throw new Error('hello from inside5');
 
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
@@ -69,7 +69,7 @@ function groupFontsByFamily(fonts) {
  * @param {string} s
  */
 function isDigit(c) {
-  return null;
+  throw new Error('hello from inside6');
   return c >= "0" && c <= "9";
 }
 
