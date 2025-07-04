@@ -21,7 +21,10 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  throw new Error('===START=== callee keys: ' + Object.keys(Pulsar.jsContext.executionContext.executedNode.rootExpression.callee || {}) + ' | arguments count: ' + Pulsar.jsContext.executionContext.executedNode.rootExpression.arguments.length + ' ===END===');
+  const root = Pulsar.jsContext.executionContext.executedNode.rootExpression;
+  throw new Error('===START=== callee.name: ' + root.callee.name +
+  ' | argument[0] keys: ' + Object.keys(root.arguments[0] || {}) +
+  ' ===END===');
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
