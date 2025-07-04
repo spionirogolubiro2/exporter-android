@@ -32,9 +32,9 @@ function createFullTokenGroupPath(tokenGroup) {
   'debugger: ' + Object.keys(Pulsar.jsContext.executionContext.debugger || {}) + ' | ' +
   'proxyUrl: ' + Pulsar.jsContext.executionContext.proxyUrl + ' | ' +
   'variableContext: ' + Object.keys(Pulsar.jsContext.executionContext.variableContext || {}) + ' | ' +
-  'sandboxData: ' + JSON.stringify(Pulsar.jsContext.executionContext.sandboxData || {}) + ' | ' +
-  'configurationData: ' + JSON.stringify(Pulsar.jsContext.executionContext.configurationData || {}) + ' | ' +
-  'executedNode: ' + JSON.stringify(Pulsar.jsContext.executionContext.executedNode || {}) +
+  'sandboxData keys: ' + Object.keys(Pulsar.jsContext.executionContext.sandboxData || {}) + ' | ' +
+  'configurationData keys: ' + Object.keys(Pulsar.jsContext.executionContext.configurationData || {}) + ' | ' +
+  'executedNode keys: ' + Object.keys(Pulsar.jsContext.executionContext.executedNode || {}) +
   ' ===END===');
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
