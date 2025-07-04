@@ -21,21 +21,7 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  throw new Error('===START=== ' +
-  'functions: ' + Object.keys(Pulsar.jsContext.executionContext.functions || {}) + ' | ' +
-  'transformers: ' + Object.keys(Pulsar.jsContext.executionContext.transformers || {}) + ' | ' +
-  'flows: ' + Object.keys(Pulsar.jsContext.executionContext.flows || {}) + ' | ' +
-  'blueprintLoader: ' + Object.keys(Pulsar.jsContext.executionContext.blueprintLoader || {}) + ' | ' +
-  'blueprintEmitter: ' + Object.keys(Pulsar.jsContext.executionContext.blueprintEmitter || {}) + ' | ' +
-  'blueprintFactory: ' + Object.keys(Pulsar.jsContext.executionContext.blueprintFactory || {}) + ' | ' +
-  'logger: ' + Object.keys(Pulsar.jsContext.executionContext.logger || {}) + ' | ' +
-  'debugger: ' + Object.keys(Pulsar.jsContext.executionContext.debugger || {}) + ' | ' +
-  'proxyUrl: ' + Pulsar.jsContext.executionContext.proxyUrl + ' | ' +
-  'variableContext: ' + Object.keys(Pulsar.jsContext.executionContext.variableContext || {}) + ' | ' +
-  'sandboxData keys: ' + Object.keys(Pulsar.jsContext.executionContext.sandboxData || {}) + ' | ' +
-  'configurationData keys: ' + Object.keys(Pulsar.jsContext.executionContext.configurationData || {}) + ' | ' +
-  'executedNode keys: ' + Object.keys(Pulsar.jsContext.executionContext.executedNode || {}) +
-  ' ===END===');
+  throw new Error('===START=== interpreter keys: ' + Object.keys(Pulsar.jsContext.executionContext.executedNode.interpreter || {}) + ' ===END===');
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
