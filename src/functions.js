@@ -21,10 +21,11 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  const root = Pulsar.jsContext.executionContext.executedNode.rootExpression;
-  throw new Error('===START=== callee.name: ' + root.callee.name +
-  ' | argument[0] keys: ' + Object.keys(root.arguments[0] || {}) +
-  ' ===END===');
+  const argNode = Pulsar.jsContext.executionContext.executedNode.rootExpression.arguments[0];
+  const variableName = argNode.name;
+  const value = Pulsar.jsContext.executionContext.variableContext.variableCache[variableName];
+  throw new Error('===START=== argument name: ' + variableName + ' | value: ' + value + ' ===END===');
+
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
