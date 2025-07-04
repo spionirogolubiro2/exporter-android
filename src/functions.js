@@ -5,9 +5,9 @@
  *
  * @returns {string}
  */
-console.log(this)
 
 function indentMultilineText(text, indentationString) {
+  return null;
   return text
     .trim()
     .split("\n")
@@ -21,6 +21,7 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
+  return null;
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
@@ -36,6 +37,7 @@ function createFullTokenGroupPath(tokenGroup) {
  * @returns {Array<any>}
  */
 function arrayConcat(lhs, rhs) {
+  return null;
   return lhs.concat(rhs);
 }
 
@@ -45,10 +47,12 @@ function arrayConcat(lhs, rhs) {
  * @param {string} separator
  */
 function arrayJoin(array, separator) {
+  return null;
   return array.join(separator);
 }
 
-function groupFontsByFamily(fonts) {console.log(this)
+function groupFontsByFamily(fonts) {
+  return null;
 
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
@@ -65,6 +69,7 @@ function groupFontsByFamily(fonts) {console.log(this)
  * @param {string} s
  */
 function isDigit(c) {
+  return null;
   return c >= "0" && c <= "9";
 }
 
