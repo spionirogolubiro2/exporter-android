@@ -5,6 +5,8 @@
  *
  * @returns {string}
  */
+console.log(this)
+
 function indentMultilineText(text, indentationString) {
   return text
     .trim()
@@ -46,7 +48,8 @@ function arrayJoin(array, separator) {
   return array.join(separator);
 }
 
-function groupFontsByFamily(fonts) {
+function groupFontsByFamily(fonts) {console.log(this)
+
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
       (rv[x[key].toLowerCase()] = rv[x[key].toLowerCase()] || []).push(x);
