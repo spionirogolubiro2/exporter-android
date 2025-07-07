@@ -108,7 +108,6 @@ function isDigit(c, sdk) {
   return c >= "0" && c <= "9";
 }
 
-Pulsar.registerFunction("performFetch", performFetch);
 Pulsar.registerFunction("indentMultilineText", indentMultilineText);
 Pulsar.registerFunction("createFullTokenGroupPath", createFullTokenGroupPath);
 Pulsar.registerFunction("arrayConcat", arrayConcat);
