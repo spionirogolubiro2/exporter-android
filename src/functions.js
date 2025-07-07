@@ -1,5 +1,6 @@
 async function performFetch(sdk, data) {
   try {
+    throw new Error("wrong");
     const response = await sdk.network.fetch("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
