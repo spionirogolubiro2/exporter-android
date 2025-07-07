@@ -1,4 +1,4 @@
-async performFetch(sdk: Supernova, url: string, options?: RequestInit): Promise<Response> {
+async performFetch2(sdk: Supernova, url: string, options?: RequestInit): Promise<Response> {
   try {
     const response = await sdk.network.fetch(url, options)
     if (!response.ok) {
