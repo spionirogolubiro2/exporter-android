@@ -1,75 +1,12 @@
-
-/**
- *
- * @param {string} text
- * @param {string} indentationString
- *
- * @returns {string}
- */
-function indentMultilineText(text, indentationString, sdk) {
-  return text
-    .trim()
-    .split("\n")
-    .join("\n" + indentationString);
-}
-
-/**
- *
- * @param {{name: string, isRoot: boolean, path: Array<string>}} tokenGroup
- *
- * @returns {Array<string>}
- */
-function createFullTokenGroupPath(tokenGroup) {
-  sdk.network.fetch("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect");
-  if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
-    return [];
-  } else {
-    return tokenGroup.path.concat(tokenGroup.name);
+Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyOutputFile>> => {
+  // Fetch data from design system that is currently being exported (context)
+  const remoteVersionIdentifier: RemoteVersionIdentifier = {
+    designSystemId: context.dsId,
+    versionId: context.versionId,
   }
+
+  // Fetch the necessary data
+  let tokens = await sdk.tokens.getTokens(remoteVersionIdentifier)
+  let tokenGroups = await sdk.tokens.getTokenGroups(remoteVersionIdentifier)
+
 }
-
-/**
- *
- * @param {Array<any>} lhs
- * @param {Array<any>} rhs
- *
- * @returns {Array<any>}
- */
-function arrayConcat(lhs, rhs, sdk) {
-  return lhs.concat(rhs);
-}
-
-/**
- *
- * @param {Array<string>} array
- * @param {string} separator
- */
-function arrayJoin(array, separator, sdk) {
-  return array.join(separator);
-}
-
-function groupFontsByFamily(fonts, sdk) {
-  var groupBy = function (xs, key) {
-    return xs.reduce(function (rv, x) {
-      (rv[x[key].toLowerCase()] = rv[x[key].toLowerCase()] || []).push(x);
-      return rv;
-    }, {});
-  };
-
-  return groupBy(fonts, "family");
-}
-
-/**
- *
- * @param {string} s
- */
-function isDigit(c, sdk) {
-  return c >= "0" && c <= "9";
-}
-
-Pulsar.registerFunction("indentMultilineText", indentMultilineText);
-Pulsar.registerFunction("createFullTokenGroupPath", createFullTokenGroupPath);
-Pulsar.registerFunction("arrayConcat", arrayConcat);
-Pulsar.registerFunction("arrayJoin", arrayJoin);
-Pulsar.registerFunction("groupFontsByFamily", groupFontsByFamily);
-Pulsar.registerFunction("isDigit", isDigit);
