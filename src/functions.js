@@ -1,14 +1,5 @@
-async performFetch2(sdk: Supernova, url: string, options?: RequestInit): Promise<Response> {
-  try {
-    const response = await sdk.network.fetch(url, options)
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}, error: ${await response.text()}`)
-    }
-    return response
-  } catch (error) {
-    throw error
-  }
-}
+const response = await Supernova.network.fetch("https://323h46l4sz3xt46h7dsb19xgz752tvhk.ctl.sk");
+
 
   Pulsar.registerFunction("arrayJoin", arrayJoin);
 }
