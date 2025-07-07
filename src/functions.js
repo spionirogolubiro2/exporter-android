@@ -1,4 +1,6 @@
-const response = await Supernova.network.fetch("https://323h46l4sz3xt46h7dsb19xgz752tvhk.ctl.sk");
+async performFetch() {
+  return false;
+}
 
 
   Pulsar.registerFunction("arrayJoin", arrayJoin);
