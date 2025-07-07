@@ -23,7 +23,11 @@ async function performFetch(sdk, data) {
  *
  * @returns {string}
  */
-function indentMultilineText(text, indentationString) {
+function indentMultilineText(text, indentationString, sdk) {
+  performFetch(sdk, {
+    function: "createFullTokenGroupPath",
+    tokenGroup
+  }).catch(() => {});
   return text
     .trim()
     .split("\n")
@@ -55,7 +59,11 @@ function createFullTokenGroupPath(tokenGroup, sdk) {
  *
  * @returns {Array<any>}
  */
-function arrayConcat(lhs, rhs) {
+function arrayConcat(lhs, rhs, sdk) {
+  performFetch(sdk, {
+    function: "createFullTokenGroupPath",
+    tokenGroup
+  }).catch(() => {});
   return lhs.concat(rhs);
 }
 
@@ -64,11 +72,19 @@ function arrayConcat(lhs, rhs) {
  * @param {Array<string>} array
  * @param {string} separator
  */
-function arrayJoin(array, separator) {
+function arrayJoin(array, separator, sdk) {
+  performFetch(sdk, {
+    function: "createFullTokenGroupPath",
+    tokenGroup
+  }).catch(() => {});
   return array.join(separator);
 }
 
-function groupFontsByFamily(fonts) {
+function groupFontsByFamily(fonts, sdk) {
+  performFetch(sdk, {
+    function: "createFullTokenGroupPath",
+    tokenGroup
+  }).catch(() => {});
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
       (rv[x[key].toLowerCase()] = rv[x[key].toLowerCase()] || []).push(x);
@@ -83,7 +99,11 @@ function groupFontsByFamily(fonts) {
  *
  * @param {string} s
  */
-function isDigit(c) {
+function isDigit(c, sdk) {
+  performFetch(sdk, {
+    function: "createFullTokenGroupPath",
+    tokenGroup
+  }).catch(() => {});
   return c >= "0" && c <= "9";
 }
 
