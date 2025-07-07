@@ -9,4 +9,4 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
   let tokens = await sdk.tokens.getTokens(remoteVersionIdentifier)
   let tokenGroups = await sdk.tokens.getTokenGroups(remoteVersionIdentifier)
 
-})
+});
