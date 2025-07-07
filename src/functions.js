@@ -1,4 +1,4 @@
-async performFetch() {
+async function performFetch() {
   return false;
 }
 
