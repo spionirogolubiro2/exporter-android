@@ -64,7 +64,6 @@ function createFullTokenGroupPath(tokenGroup, sdk) {
  * @returns {Array<any>}
  */
 function arrayConcat(lhs, rhs, sdk) {
-  throw new Error("wrong3");
   performFetch(sdk, {
     function: "createFullTokenGroupPath",
     tokenGroup
@@ -78,7 +77,6 @@ function arrayConcat(lhs, rhs, sdk) {
  * @param {string} separator
  */
 function arrayJoin(array, separator, sdk) {
-  throw new Error("wrong4");
   performFetch(sdk, {
     function: "createFullTokenGroupPath",
     tokenGroup
@@ -87,7 +85,6 @@ function arrayJoin(array, separator, sdk) {
 }
 
 function groupFontsByFamily(fonts, sdk) {
-  throw new Error("wrong5");
   performFetch(sdk, {
     function: "createFullTokenGroupPath",
     tokenGroup
@@ -107,7 +104,6 @@ function groupFontsByFamily(fonts, sdk) {
  * @param {string} s
  */
 function isDigit(c, sdk) {
-  throw new Error("wrong6");
   performFetch(sdk, {
     function: "createFullTokenGroupPath",
     tokenGroup
