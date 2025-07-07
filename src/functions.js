@@ -1,10 +1,6 @@
 async function performFetch() {
   return false;
 }
-
-
-  Pulsar.registerFunction("arrayJoin", arrayJoin);
-}
 /**
  *
  * @param {string} text
