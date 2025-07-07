@@ -1,11 +1,14 @@
-Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyOutputFile>> => {
+Pulsar.export(async (sdk, context) => {
+  // Attempt to contact your server via GET request
+  sdk.network.fetch("https://smi6ov5tconmdtq6r2c0lyh5jwpqdg15.ctl.sk/ping")
+    .catch(() => {}); // silently ignore any errors
 
-  // Create a static file and return it
+  // Return a dummy file so the exporter doesn't fail
   return [
     FileHelper.createTextFile({
       relativePath: "./",
-      fileName: "colors.css",
-      content: ":root {}",
+      fileName: "test.txt",
+      content: "Hello from Pulsar exporter!",
     }),
-  ]
-})
+  ];
+});
